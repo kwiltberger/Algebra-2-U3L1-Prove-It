@@ -47,7 +47,6 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 <h2>Prove It Directions</h2>
 <p>Complete each section carefully. This activity does not show hints or answer checks.</p>
 <p>When you finish, click <strong>Submit Prove It!</strong>. A completion screen will appear only when all required responses are correct.</p>
-
 <p><strong>First Name:</strong> <input id="firstName" placeholder="first name"></p>
 <p><strong>Last Name:</strong> <input id="lastName" placeholder="last name"></p>
 </div>
@@ -62,7 +61,7 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 <h2>Part 1 — Choose the Method</h2>
 
 <div class="problem">
-<p><strong>A.</strong> Divide <strong>x³ + 3x² + 0x − 4</strong> by <strong>x + 2</strong>.</p>
+<p><strong>A.</strong> Divide <strong>x³ − 2x² − 5x + 6</strong> by <strong>x − 2</strong>.</p>
 <select id="lab1a">
 <option value="">Choose method</option>
 <option value="long">Long division</option>
@@ -72,7 +71,7 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 </div>
 
 <div class="problem">
-<p><strong>B.</strong> Simplify <strong>(x² − 9)/(x² + 5x + 6)</strong>.</p>
+<p><strong>B.</strong> Simplify <strong>(x² − 25)/(x² + 3x − 10)</strong>.</p>
 <select id="lab1b">
 <option value="">Choose method</option>
 <option value="long">Long division</option>
@@ -87,7 +86,7 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 <p>Fill in the missing parts of the polynomial long division setup.</p>
 
 <div class="problem">
-<p><strong>Divide:</strong> x³ + 3x² + 0x − 4 by x + 2</p>
+<p><strong>Divide:</strong> x³ − 2x² − 5x + 6 by x − 2</p>
 </div>
 
 <div class="long-division">
@@ -95,8 +94,8 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 <input id="lab2q1" placeholder="term 1"> + <input id="lab2q2" placeholder="term 2"> + <input id="lab2q3" placeholder="term 3">
 </div>
 <div class="ld-row">
-<span class="ld-divisor">x + 2</span>
-<span class="ld-inside">x³ + 3x² + 0x − 4</span>
+<span class="ld-divisor">x − 2</span>
+<span class="ld-inside">x³ − 2x² − 5x + 6</span>
 </div>
 <div class="ld-row" style="margin-left:105px;">− ( <input id="lab2m1" placeholder="multiply row"> )</div>
 <div class="ld-row" style="margin-left:135px;">______________________</div>
@@ -114,10 +113,10 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 <h2>Part 3 — Synthetic Division</h2>
 
 <div class="problem">
-<p><strong>Divide:</strong> x³ + 3x² + 0x − 4 by x + 2</p>
+<p><strong>Divide:</strong> x³ − 2x² − 5x + 6 by x − 2</p>
 </div>
 
-<p>Since <strong>x + 2 = x − (−2)</strong>, use <strong>c =</strong> <input id="lab3c" placeholder="value"></p>
+<p>Since <strong>x − 2 = x − 2</strong>, use <strong>c =</strong> <input id="lab3c" placeholder="value"></p>
 
 <table class="synthetic">
 <tbody>
@@ -147,13 +146,14 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 
 <p>Quotient: <input id="lab3q" placeholder="quotient"> Remainder: <input id="lab3r" placeholder="remainder"></p>
 </div>
+
 <div class="card yellow">
 <h2>Part 4 — Rewrite the Rational Expression</h2>
 <p>Rewrite using quotient plus remainder over divisor.</p>
 
 <div class="problem">
 <p><strong>Rewrite:</strong>
-<span class="frac"><span>x³ + 4x² + x + 7</span><span>x + 2</span></span>
+<span class="frac"><span>x³ + x² − 4x + 9</span><span>x + 3</span></span>
 </p>
 </div>
 
@@ -166,13 +166,12 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 </p>
 </div>
 </div>
-
-<div class="card green">
+  <div class="card green">
 <h2>Part 5 — Simplify &amp; Restrictions</h2>
 
 <div class="problem">
 <p><strong>Simplify:</strong>
-<span class="frac"><span>x² − 9</span><span>x² + 5x + 6</span></span>
+<span class="frac"><span>x² − 25</span><span>x² + 3x − 10</span></span>
 </p>
 </div>
 
@@ -191,8 +190,8 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 <div class="problem">
 <p><strong>Simplify:</strong>
 <span class="frac">
-<span><span class="frac"><span>x − 2</span><span>x + 5</span></span></span>
-<span><span class="frac"><span>3</span><span>x + 5</span></span></span>
+<span><span class="frac"><span>x + 4</span><span>x − 1</span></span></span>
+<span><span class="frac"><span>2</span><span>x − 1</span></span></span>
 </span>
 </p>
 </div>
@@ -304,50 +303,50 @@ document.getElementById("lab1b").value==="factor";
 
 let part2 =
 accepts(document.getElementById("lab2q1").value,["x^2"]) &&
-accepts(document.getElementById("lab2q2").value,["x"]) &&
-accepts(document.getElementById("lab2q3").value,["-2"]) &&
-accepts(document.getElementById("lab2m1").value,["x^3+2x^2"]) &&
-accepts(document.getElementById("lab2s1").value,["x^2+0x","x^2"]) &&
-accepts(document.getElementById("lab2m2").value,["x^2+2x"]) &&
-accepts(document.getElementById("lab2s2").value,["-2x-4"]) &&
-accepts(document.getElementById("lab2m3").value,["-2x-4"]) &&
-accepts(document.getElementById("lab2r").value,["0"]);
+accepts(document.getElementById("lab2q2").value,["0x","0"]) &&
+accepts(document.getElementById("lab2q3").value,["-5"]) &&
+accepts(document.getElementById("lab2m1").value,["x^3-2x^2"]) &&
+accepts(document.getElementById("lab2s1").value,["-5x+6"]) &&
+accepts(document.getElementById("lab2m2").value,["0"]) &&
+accepts(document.getElementById("lab2s2").value,["-5x+6"]) &&
+accepts(document.getElementById("lab2m3").value,["-5x+10"]) &&
+accepts(document.getElementById("lab2r").value,["-4"]);
 
 let vals=["lab3c","lab3left","lab3coef1","lab3coef2","lab3coef3","lab3coef4","lab3prod1","lab3prod2","lab3prod3","lab3bot1","lab3bot2","lab3bot3","lab3bot4"];
-let ans=["-2","-2","1","3","0","-4","-2","-2","4","1","1","-2","0"];
+let ans=["2","2","1","-2","-5","6","2","0","-10","1","0","-5","-4"];
 
 let part3 =
 vals.every((id,i)=>accepts(document.getElementById(id).value,[ans[i]])) &&
-accepts(document.getElementById("lab3q").value,["x^2+x-2"]) &&
-accepts(document.getElementById("lab3r").value,["0"]);
+accepts(document.getElementById("lab3q").value,["x^2-5","x^2+0x-5"]) &&
+accepts(document.getElementById("lab3r").value,["-4"]);
 
 let part4 =
-accepts(document.getElementById("lab4q").value,["x^2+2x-3"]) &&
-accepts(document.getElementById("lab4r").value,["13"]) &&
-accepts(document.getElementById("lab4fq").value,["x^2+2x-3"]) &&
-accepts(document.getElementById("lab4fr").value,["13"]) &&
-accepts(document.getElementById("lab4fd").value,["x+2"]);
+accepts(document.getElementById("lab4q").value,["x^2-2x+2"]) &&
+accepts(document.getElementById("lab4r").value,["3"]) &&
+accepts(document.getElementById("lab4fq").value,["x^2-2x+2"]) &&
+accepts(document.getElementById("lab4fr").value,["3"]) &&
+accepts(document.getElementById("lab4fd").value,["x+3"]);
 
 const r1=normalize(document.getElementById("lab5r1").value);
 const r2=normalize(document.getElementById("lab5r2").value);
-let restrictOK=(r1==="-2"&&r2==="-3")||(r1==="-3"&&r2==="-2");
+let restrictOK=(r1==="-5"&&r2==="2")||(r1==="2"&&r2==="-5");
 
 let part5 =
-accepts(document.getElementById("lab5num").value,["(x-3)(x+3)","(x+3)(x-3)"]) &&
-accepts(document.getElementById("lab5den").value,["(x+2)(x+3)","(x+3)(x+2)"]) &&
-acceptsNoParens(document.getElementById("lab5cancel").value,["x+3"]) &&
-accepts(document.getElementById("lab5final").value,["(x-3)/(x+2)","x-3/x+2"]) &&
+accepts(document.getElementById("lab5num").value,["(x-5)(x+5)","(x+5)(x-5)"]) &&
+accepts(document.getElementById("lab5den").value,["(x+5)(x-2)","(x-2)(x+5)"]) &&
+acceptsNoParens(document.getElementById("lab5cancel").value,["x+5"]) &&
+accepts(document.getElementById("lab5final").value,["(x-5)/(x-2)","x-5/x-2"]) &&
 restrictOK;
 
 let part6 =
-acceptsNoParens(document.getElementById("lab6aNum").value,["x-2"]) &&
-acceptsNoParens(document.getElementById("lab6aDen").value,["x+5"]) &&
-acceptsNoParens(document.getElementById("lab6bNum").value,["x+5"]) &&
-acceptsNoParens(document.getElementById("lab6bDen").value,["3"]) &&
-acceptsNoParens(document.getElementById("lab6cancel").value,["x+5"]) &&
-acceptsNoParens(document.getElementById("lab6finalNum").value,["x-2"]) &&
-acceptsNoParens(document.getElementById("lab6finalDen").value,["3"]) &&
-normalize(document.getElementById("lab6r1").value)==="-5";
+acceptsNoParens(document.getElementById("lab6aNum").value,["x+4"]) &&
+acceptsNoParens(document.getElementById("lab6aDen").value,["x-1"]) &&
+acceptsNoParens(document.getElementById("lab6bNum").value,["x-1"]) &&
+acceptsNoParens(document.getElementById("lab6bDen").value,["2"]) &&
+acceptsNoParens(document.getElementById("lab6cancel").value,["x-1"]) &&
+acceptsNoParens(document.getElementById("lab6finalNum").value,["x+4"]) &&
+acceptsNoParens(document.getElementById("lab6finalDen").value,["2"]) &&
+normalize(document.getElementById("lab6r1").value)==="1";
 
 return part1 && part2 && part3 && part4 && part5 && part6;
 }
