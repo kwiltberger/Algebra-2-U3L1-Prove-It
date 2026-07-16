@@ -86,7 +86,7 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 <p>Fill in the missing parts of the polynomial long division setup.</p>
 
 <div class="problem">
-<p><strong>Divide:</strong> x³ − 2x² − 5x + 6 by x − 2</p>
+<p><strong>Divide:</strong> x³ + 4x² + x − 6 by x + 2</p>
 </div>
 
 <div class="long-division">
@@ -113,7 +113,7 @@ button{background:#0f2d44;color:white;border:none;padding:12px 18px;border-radiu
 <h2>Part 3 — Synthetic Division</h2>
 
 <div class="problem">
-<p><strong>Divide:</strong> x³ − 2x² − 5x + 6 by x − 2</p>
+<p><strong>Divide:</strong> x³ + 4x² + x − 6 by x + 2</p>
 </div>
 
 <p>Since <strong>x − 2 = x − 2</strong>, use <strong>c =</strong> <input id="lab3c" placeholder="value"></p>
@@ -303,22 +303,22 @@ document.getElementById("lab1b").value==="factor";
 
 let part2 =
 accepts(document.getElementById("lab2q1").value,["x^2"]) &&
-accepts(document.getElementById("lab2q2").value,["0x","0"]) &&
-accepts(document.getElementById("lab2q3").value,["-5"]) &&
-accepts(document.getElementById("lab2m1").value,["x^3-2x^2"]) &&
-accepts(document.getElementById("lab2s1").value,["-5x+6"]) &&
-accepts(document.getElementById("lab2m2").value,["0"]) &&
-accepts(document.getElementById("lab2s2").value,["-5x+6"]) &&
-accepts(document.getElementById("lab2m3").value,["-5x+10"]) &&
-accepts(document.getElementById("lab2r").value,["-4"]);
+accepts(document.getElementById("lab2q2").value,["2x"]) &&
+accepts(document.getElementById("lab2q3").value,["-3"]) &&
+accepts(document.getElementById("lab2m1").value,["x^3+2x^2"]) &&
+accepts(document.getElementById("lab2s1").value,["2x^2+x"]) &&
+accepts(document.getElementById("lab2m2").value,["2x^2+4x"]) &&
+accepts(document.getElementById("lab2s2").value,["-3x-6"]) &&
+accepts(document.getElementById("lab2m3").value,["-3x-6"]) &&
+accepts(document.getElementById("lab2r").value,["0"]);
 
 let vals=["lab3c","lab3left","lab3coef1","lab3coef2","lab3coef3","lab3coef4","lab3prod1","lab3prod2","lab3prod3","lab3bot1","lab3bot2","lab3bot3","lab3bot4"];
-let ans=["2","2","1","-2","-5","6","2","0","-10","1","0","-5","-4"];
+let ans=["-2","-2","1","4","1","-6","-2","-4","6","1","2","-3","0"];
 
 let part3 =
 vals.every((id,i)=>accepts(document.getElementById(id).value,[ans[i]])) &&
-accepts(document.getElementById("lab3q").value,["x^2-5","x^2+0x-5"]) &&
-accepts(document.getElementById("lab3r").value,["-4"]);
+accepts(document.getElementById("lab3q").value,["x^2+2x-3"]) &&
+accepts(document.getElementById("lab3r").value,["0"]);
 
 let part4 =
 accepts(document.getElementById("lab4q").value,["x^2-2x+2"]) &&
